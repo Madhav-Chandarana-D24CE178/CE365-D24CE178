@@ -1,0 +1,16 @@
+%option noyywrap
+%{
+#include <stdio.h>
+%}
+
+%%
+[Cc][Hh][Aa][Rr][Uu][Ss][Aa][Tt]   printf("university");
+\n                                printf("\n");
+.                                 printf("%s", yytext);
+%%
+
+int main()
+{
+    yylex();
+    return 0;
+}
